@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool Ground;
     SpriteRenderer sr;
     Rigidbody2D rb;
     Animator anim;
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             sr.flipX = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && Ground == true)
             Jump();
     }
     void Jump()
